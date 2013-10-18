@@ -23,7 +23,7 @@ published job postings are also automatically viewable via
 - Let you write a custom job posting form, or programatically apply for any of
 the postings. If this feature is important to you, please let us know and we
 will prioritize it. You should link to `posting.applyUrl` which is at
-[jobs.lever.co/site/*postingId*/apply](https://jobs.lever.co/lever/f6eb3fa6-0ba5-4178-b1ae-e4e0448ba175).
+[jobs.lever.co/site/postingId/apply](https://jobs.lever.co/lever/f6eb3fa6-0ba5-4178-b1ae-e4e0448ba175/apply).
 - Let you do full-text searches over open jobs
 
 Note that all jobs posted to lever are currently publically viewable. Supporting internal job postings is on our roadmap but not implemented yet.
