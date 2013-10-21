@@ -45,7 +45,7 @@ at [https://api.lever.co/v0/postings/lever](https://api.lever.co/v0/postings/lev
 or [https://jobs.lever.co/lever/](https://jobs.lever.co/lever/).
 
 
-## GET all job postings
+## Get all job postings
 
 > GET /v0/postings/SITE?skip=X&limit=Y
 
