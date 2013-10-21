@@ -68,7 +68,7 @@ Each job posting is a JSON object with the following fields:
 | lists       | Extra lists of things like requirements from the job posting. This is a list of `{text:NAME, content:"unstyled HTML of list elements"}`
 | additional  | Optional closing content for the job posting. May be an empty string.
 | id          | Unique Job ID
-| applyUrl    | A URL which points to lever's internal application form for the job posting
+| applyUrl    | A URL which points to lever's internal application form for the job posting. [Example](https://jobs.lever.co/lever/29511546-a7c9-451f-8b01-2010abbaca82/apply)
 | tags        | Tags which have been added to the job posting
 
 ## Get a specific job posting
