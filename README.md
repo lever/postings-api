@@ -75,5 +75,7 @@ Each job posting is a JSON object with the following fields:
 
 > GET /v0/postings/SITE/POSTING-ID
 
+Example [https://api.lever.co/v0/postings/lever/f6eb3fa6-0ba5-4178-b1ae-e4e0448ba175](https://api.lever.co/v0/postings/lever/f6eb3fa6-0ba5-4178-b1ae-e4e0448ba175)
+
 Get the named job posting by id. The fields which are available are the same as the fields exposed by the list API (above).
 
