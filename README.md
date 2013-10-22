@@ -4,7 +4,7 @@ This repository contains documentation and example apps for the lever postings
 REST API. The API is designed to help you make a jobs site. This API is still
 quite new and its probably missing some important features. If you need any
 features which are missing in this API or find any issues, please email us at
-[team@lever.co](mailto:support@lever.co) or file an issue on this repository.
+[support@lever.co](mailto:support@lever.co) or file an issue on this repository.
 
 You do not need to use this API to get started with lever job postings. All
 published job postings are also automatically viewable via
