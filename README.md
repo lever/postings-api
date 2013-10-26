@@ -4,7 +4,7 @@ This repository contains documentation and example apps for the lever postings
 REST API. The API is designed to help you make a jobs site. This API is still
 quite new and its probably missing some important features. If you need any
 features which are missing in this API or find any issues, please email us at
-[team@lever.co](mailto:support@lever.co) or file an issue on this repository.
+[support@lever.co](mailto:support@lever.co) or file an issue on this repository.
 
 You do not need to use this API to get started with lever job postings. All
 published job postings are also automatically viewable via
@@ -68,6 +68,7 @@ Each job posting is a JSON object with the following fields:
 
 | Field       | Description                   |
 | ----------- | ----------------------------- |
+| id          | Unique Job ID
 | text        | Posting name
 | categories  | Object with location, commitment and team
 | description | Job description
@@ -76,7 +77,6 @@ Each job posting is a JSON object with the following fields:
 | id          | Unique Job ID
 | hostedUrl    | A URL which points to lever's hosted job posting page. [Example](https://jobs.lever.co/lever/29511546-a7c9-451f-8b01-2010abbaca82)
 | applyUrl    | A URL which points to lever's hosted application form to apply to the job posting. [Example](https://jobs.lever.co/lever/29511546-a7c9-451f-8b01-2010abbaca82/apply)
-| tags        | Tags which have been added to the job posting
 
 ## Get a specific job posting
 

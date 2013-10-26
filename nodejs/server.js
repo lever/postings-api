@@ -6,7 +6,7 @@ var SITE = 'lever';
 
 var BASE = 'https://api.lever.co/v0/postings/' + SITE;
 
-app = express();
+var app = express();
 
 // At the root page, we'll display all postings.
 app.get('/', function(req, res, next) {
