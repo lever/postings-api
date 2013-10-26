@@ -49,18 +49,24 @@ or [https://jobs.lever.co/lever/](https://jobs.lever.co/lever/).
 
 > GET /v0/postings/SITE?skip=X&limit=Y
 
-Example [https://api.lever.co/v0/postings/lever?skip=1&limit=3](https://api.lever.co/v0/postings/lever?skip=1&limit=3)
+Example [https://api.lever.co/v0/postings/lever?skip=1&limit=3&mode=json](https://api.lever.co/v0/postings/lever?skip=1&limit=3&mode=json)
 
 Fetch all published job postings.
 
 | Query parameter | Description                   |
 | --------------- | ----------------------------- |
+| mode            | The rendering output mode. json, iframe or html. |
 | skip            | skip N from the start         |
 | limit           | only return at most N results |
+| css             | In iframe mode, the css stylesheet to import |
+| location        | Filter postings by location. You can specify multiple values and they are *OR*'ed together |
+| commitment      | Filter postings by commitment. You can specify multiple values and they are *OR*'ed together |
+| team            | Filter postings by team. You can specify multiple values and they are *OR*'ed together |
+
 
 Each job posting is a JSON object with the following fields:
 
-| name        | Description                   |
+| Field       | Description                   |
 | ----------- | ----------------------------- |
 | text        | Posting name
 | categories  | Object with location, commitment and team
@@ -68,7 +74,8 @@ Each job posting is a JSON object with the following fields:
 | lists       | Extra lists of things like requirements from the job posting. This is a list of `{text:NAME, content:"unstyled HTML of list elements"}`
 | additional  | Optional closing content for the job posting. May be an empty string.
 | id          | Unique Job ID
-| applyUrl    | A URL which points to lever's internal application form for the job posting. [Example](https://jobs.lever.co/lever/29511546-a7c9-451f-8b01-2010abbaca82/apply)
+| hostedUrl    | A URL which points to lever's hosted job posting page. [Example](https://jobs.lever.co/lever/29511546-a7c9-451f-8b01-2010abbaca82)
+| applyUrl    | A URL which points to lever's hosted application form to apply to the job posting. [Example](https://jobs.lever.co/lever/29511546-a7c9-451f-8b01-2010abbaca82/apply)
 | tags        | Tags which have been added to the job posting
 
 ## Get a specific job posting
