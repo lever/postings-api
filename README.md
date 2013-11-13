@@ -94,7 +94,7 @@ Get the named job posting by id. The fields which are available are the same as 
 
 If you include Lever's postings in an iframe, you will likely want to resize the height of the iframe to its contents. Since the iframe is served from a different domain than your site, you can't directly measure its size from JavaScript in the containing window.
 
-To work around this cross-domain restriction, the postings iframe can communicate via with an HTML page also served from your domain. The URL of this page is passed in as the `resize` parameter in the Lever iframe URL.
+To work around this cross-domain restriction, the postings iframe can communicate its height via an HTML page also served from your domain. The URL of this page is passed in as the `resize` parameter in the Lever iframe URL.
 
 ```
 |------------------------------------------------------------------------------------------------------------------|
