@@ -62,6 +62,7 @@ Fetch all published job postings.
 | location        | Filter postings by location. You can specify multiple values and they are *OR*'ed together |
 | commitment      | Filter postings by commitment. You can specify multiple values and they are *OR*'ed together |
 | team            | Filter postings by team. You can specify multiple values and they are *OR*'ed together |
+| group           | May be one of `location`, `commitment`, or `team`. Returns results grouped by category |
 
 
 Each job posting is a JSON object with the following fields:
