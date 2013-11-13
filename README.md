@@ -45,7 +45,7 @@ at [https://api.lever.co/v0/postings/lever](https://api.lever.co/v0/postings/lev
 or [https://jobs.lever.co/lever/](https://jobs.lever.co/lever/).
 
 
-## Get all job postings
+## Get a list of job postings
 
 > GET /v0/postings/SITE?skip=X&limit=Y
 
@@ -58,11 +58,12 @@ Fetch all published job postings.
 | mode            | The rendering output mode. json, iframe or html. |
 | skip            | skip N from the start         |
 | limit           | only return at most N results |
-| css             | In iframe mode, the css stylesheet to import |
 | location        | Filter postings by location. You can specify multiple values and they are *OR*'ed together |
 | commitment      | Filter postings by commitment. You can specify multiple values and they are *OR*'ed together |
 | team            | Filter postings by team. You can specify multiple values and they are *OR*'ed together |
 | group           | May be one of `location`, `commitment`, or `team`. Returns results grouped by category |
+| css             | In iframe mode, the URL of a css stylesheet |
+| resize          | In iframe mode, the URL of an HTML page with a script for resizing the iframe. (See usage below) |
 
 
 Each job posting is a JSON object with the following fields:
@@ -79,6 +80,7 @@ Each job posting is a JSON object with the following fields:
 | hostedUrl    | A URL which points to lever's hosted job posting page. [Example](https://jobs.lever.co/lever/29511546-a7c9-451f-8b01-2010abbaca82)
 | applyUrl    | A URL which points to lever's hosted application form to apply to the job posting. [Example](https://jobs.lever.co/lever/29511546-a7c9-451f-8b01-2010abbaca82/apply)
 
+
 ## Get a specific job posting
 
 > GET /v0/postings/SITE/POSTING-ID
@@ -87,3 +89,64 @@ Example [https://api.lever.co/v0/postings/lever/f6eb3fa6-0ba5-4178-b1ae-e4e0448b
 
 Get the named job posting by id. The fields which are available are the same as the fields exposed by the list API (above).
 
+
+## Iframe resizing
+
+If you include Lever's postings in an iframe, you will likely want to resize the height of the iframe to its contents. Since the iframe is served from a different domain than your site, you can't directly measure its size from JavaScript in the containing window.
+
+To work around this cross-domain restriction, the postings iframe can add an HTML page with a script also served from your domain. The URL of this page is passed in as the `resize` parameter in the Lever iframe URL.
+
+```
+|------------------------------------------------------------------------------------------------------------------|
+|  https://example.com/jobs                                                                                        |
+|                                                                                                                  |
+|  Your header, links, and other containing content.                                                               |
+|                                                                                                                  |
+|  |------------------------------------------------------------------------------------------------------------|  |
+|  |  https://api.lever.co/v0/postings/box?mode=iframe&resize=https://example.com/resizeiframe.html             |  |
+|  |                                                                                                            |  |
+|  |  List of jobs served by Lever                                                                              |  |
+|  |                                                                                                            |  |
+|  |  |------------------------------------------------------------------------------------------------------|  |  |
+|  |  |  https://example.com/resizeiframe.html?height=312                                                    |  |  |
+|  |  |                                                                                                      |  |  |
+|  |  |  Invisible iframe served by you. Purpose is passing the height to the top window                     |  |  |
+|  |  |------------------------------------------------------------------------------------------------------|  |  |
+|  |------------------------------------------------------------------------------------------------------------|  |
+|------------------------------------------------------------------------------------------------------------------|
+```
+
+In `https://example.com/jobs`, the Lever iframe should be embedded in a manner similar to:
+
+``` html
+<iframe id="postings-iframe" seamless frameborder="0" allowtransparency="true" scrolling="no"
+  src="https://api.lever.co/v0/postings/example?mode=iframe&resize=https://example.com/resizeiframe.html&css=https://example.com/postingsiframe.css">
+  Your browser does not appear to support iframes. See <a href="https://jobs.lever.co/example">all job postings</a>.
+</iframe>
+<script type="text/javascript">
+  function resizePostings(height) {
+    var iframe = document.getElementById('postings-iframe');
+    if (iframe) {
+      iframe.style.height = height + 'px';
+    }
+  }
+</script>
+```
+
+At the `resize` URL (e.g. `https://example.com/resizeiframe.html`), you should serve a page with a corresponding script that reads the height parameter from the window location and passes it up to the top window. For example:
+
+``` html
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Resize iframe</title>
+<script type="text/javascript">
+  (function() {
+    var resizePostings = window.parent.parent.resizePostings;
+    if (typeof resizePostings !== 'function') return;
+    var match = /[?&]height=([0-9]+)/i.match(window.location.href);
+    if (!match) return;
+    var height = parseInt(match[1]);
+    resizePostings(height);
+  })();
+</script>
+```
