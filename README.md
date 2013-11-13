@@ -120,7 +120,7 @@ In `https://example.com/jobs`, the Lever iframe should be embedded in a manner s
 
 ``` html
 <iframe id="postings-iframe" seamless frameborder="0" allowtransparency="true" scrolling="no"
-  src="https://api.lever.co/v0/postings/example?mode=iframe&resize=https://example.com/resizeiframe.html&css=https://example.com/postingsiframe.css">
+  src="https://api.lever.co/v0/postings/example?mode=iframe&resize=https://example.com/resizeiframe.html">
   Your browser does not appear to support iframes. See <a href="https://jobs.lever.co/example">all job postings</a>.
 </iframe>
 <script type="text/javascript">
