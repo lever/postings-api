@@ -5,8 +5,7 @@
   "main": "server.js",
   "dependencies": {
     "express": "~3",
-    "request": "~2",
-    "lever-util": "git+ssh://git@github.com:lever/util.git",
+    "request": "~2"
   },
   "devDependencies": {},
   "scripts": {
