@@ -31,6 +31,7 @@ published job postings are also automatically viewable via
   your own detail view & application form on top of our JSON API.
 - Let you specify custom success & error URLs for job postings.
 - Expose custom questions
+- Add referal information
 
 If any of these shortcomings are annoying, please [reach out to
 us](mailto:support@lever.co) or file an issue and we'll prioritize the features
