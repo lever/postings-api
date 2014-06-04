@@ -151,13 +151,13 @@ required. The candidate will be emailed after they apply to the job.
 
 | Field             | Description                   |
 | ----------------- | ----------------------------- |
-| name (*required*) | Candidate's name
-| email (*required*)| Email address
-| resume            | Resume data. Only in `multipart/form-data` mode. Should be a file.
-| phone             | Phone number
-| org               | Current company / organization
-| urls              | URLs for sites (Github, Twitter, LinkedIn, Portfolio, Other, etc). Should be a JSON map or individual urls[GitHub], urls[Twitter], etc fields
-| comments          | Additional information from the candidate
+| `name` (*required*) | Candidate's name
+| `email` (*required*)| Email address
+| `resume`            | Resume data. Only in `multipart/form-data` mode. Should be a file.
+| `phone`             | Phone number
+| `org`               | Current company / organization
+| `urls`              | URLs for sites (Github, Twitter, LinkedIn, Portfolio, Other, etc). Should be a JSON map or individual urls[GitHub], urls[Twitter], etc fields
+| `comments`          | Additional information from the candidate
 
 
 The server will respond with JSON object.
