@@ -147,7 +147,7 @@ won't see duplicate testing candidates appear on hire.lever.co.
 
 Except for resume uploading, all of the fields are available in both JSON mode
 and multipart form-data mode. The name and email address fields are both
-required. The candidate will be emailed after they apply to the job.
+required. The candidate will be emailed after they apply to the job, unless the `silent` field is set to true
 
 
 | Field             | Description                   |
@@ -159,6 +159,7 @@ required. The candidate will be emailed after they apply to the job.
 | `org`               | Current company / organization
 | `urls`              | URLs for sites (Github, Twitter, LinkedIn, Portfolio, Other, etc). Should be a JSON map or individual urls[GitHub], urls[Twitter], etc fields
 | `comments`          | Additional information from the candidate
+| `silent`            | Disables confirmation email sent to candidates upon application
 
 
 The server will respond with JSON object.
