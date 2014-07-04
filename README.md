@@ -164,7 +164,8 @@ required. The candidate will be emailed after they apply to the job, unless the 
 
 The server will respond with JSON object.
 
-- On success, **200 OK** and a body of `{ok:true}`
+- On success, **200 OK** and a body of `{ok:true, applicationId: '...'}`
+- The applicationId returned can be used to view the candidate profile in Lever at the url: `https://hire.lever.co/search/application/{applicationId}`. Note that only users logged in to Lever will be able to access that page.
 - On error, we'll send the appropriate HTTP error code and a body of `{ok:false, error:<error string>}`.
 
 
