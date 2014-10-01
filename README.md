@@ -95,6 +95,7 @@ Fetch published job postings.
 | location        | Filter postings by location. You can specify multiple values and they are *OR*'ed together |
 | commitment      | Filter postings by commitment. You can specify multiple values and they are *OR*'ed together |
 | team            | Filter postings by team. You can specify multiple values and they are *OR*'ed together |
+| level           | Filter postings by level. |
 | group           | May be one of `location`, `commitment`, or `team`. Returns results grouped by category |
 | css             | In iframe mode, the URL of a css stylesheet |
 | resize          | In iframe mode, the URL of an HTML page with a script for resizing the iframe. (See usage below) |
