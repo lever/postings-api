@@ -5,7 +5,7 @@ REST API. The API is designed to help you make a jobs site. If you need any
 features which are missing in this API or find any issues, please email us at
 [support@lever.co](mailto:support@lever.co) or file an issue on this repository.
 
-You do not need to use this API to get started with lever job postings. All
+You do not need to use this API to get started with Lever job postings. All
 published job postings are also automatically viewable via
 `jobs.lever.co/yoursite`, for example
 [jobs.lever.co/lever](https://jobs.lever.co/leverdemo)
@@ -40,6 +40,29 @@ you need.
 Note that all job postings in the `published` state are publically viewable.
 These jobs may be scraped by third parties. All other jobs are completely
 hidden from the jobs API.
+
+
+### Examples
+
+These examples use the jQuery.ajax function to get lists of jobs.
+
+[Simple list with two column layout](http://codepen.io/andreasmb/pen/uogcI)
+Displays all jobs alphabetically.
+
+![Two column list](https://raw.github.com/lever/postings-API/master/images/2col.png)
+
+[Two column layout with team filter](http://codepen.io/andreasmb/pen/tGbyA)
+Display all jobs, and let the user filter by team.
+
+
+![Two column layout with team filter](https://raw.github.com/lever/postings-API/master/images/2col-filter.png)
+
+
+[Single column layout with cards](http://codepen.io/andreasmb/pen/qgkIb)
+Displays all jobs alphabetically, with each job in a card.
+
+![Single column layout with cards](https://raw.github.com/lever/postings-API/master/images/1col-cards.png)
+
 
 
 # API Methods
@@ -240,3 +263,5 @@ At the `resize` URL (e.g. `https://example.com/resizeiframe.html`), you should s
   })();
 </script>
 ```
+
+
