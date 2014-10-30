@@ -47,26 +47,31 @@ hidden from the jobs API.
 These examples use the jQuery.ajax function to get lists of jobs.
 
 [Simple list with two column layout](http://codepen.io/andreasmb/pen/uogcI)
+
 Displays all jobs alphabetically.
 
-![Two column list](https://raw.github.com/lever/postings-API/master/images/2col.png)
+[<img src="https://raw.github.com/lever/postings-API/master/images/2col.png">](http://codepen.io/andreasmb/pen/uogcI)
+
 
 [Two column layout with team filter](http://codepen.io/andreasmb/pen/tGbyA)
+
 Display all jobs, and let the user filter by team.
 
-
-![Two column layout with team filter](https://raw.github.com/lever/postings-API/master/images/2col-filter.png)
+[<img src="https://raw.github.com/lever/postings-API/master/images/2col-filter.png">](http://codepen.io/andreasmb/pen/tGbyA)
 
 
 [Single column layout with cards](http://codepen.io/andreasmb/pen/qgkIb)
+
 Displays all jobs alphabetically, with each job in a card.
 
-![Single column layout with cards](https://raw.github.com/lever/postings-API/master/images/1col-cards.png)
+[<img src="https://raw.github.com/lever/postings-API/master/images/1col-cards.png">](http://codepen.io/andreasmb/pen/qgkIb)
+
 
 [Single column layout with cover image](http://codepen.io/andreasmb/pen/kJfrc)
+
 Displays jobs in a single column, with a cover image on top.
 
-![Cover image](https://raw.github.com/lever/postings-API/master/images/1col-hero-image.jpg)
+[<img src="https://raw.github.com/lever/postings-API/master/images/1col-hero-image.jpg">](http://codepen.io/andreasmb/pen/kJfrc)
 
 
 
