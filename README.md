@@ -66,7 +66,7 @@ Displays all jobs alphabetically, with each job in a card.
 [Single column layout with cover image](http://codepen.io/andreasmb/pen/kJfrc)
 Displays jobs in a single column, with a cover image on top.
 
-![Cover image](https://raw.github.com/lever/postings-API/master/images/1col-hero-image.png)
+![Cover image](https://raw.github.com/lever/postings-API/master/images/1col-hero-image.jpg)
 
 
 
