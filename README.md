@@ -41,6 +41,7 @@ Note that all job postings in the `published` state are publically viewable.
 These jobs may be scraped by third parties. All other jobs are completely
 hidden from the jobs API.
 
+Note that application create requests are rate limited. You will need to properly handle 429 responses if you build a custom jobs page.
 
 ### Examples
 
