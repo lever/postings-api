@@ -1,8 +1,8 @@
 # Lever Postings API
 
-This repository contains documentation and example apps for the lever postings
-REST API. The API is designed to help you make a jobs site. If you need any
-features which are missing in this API or find any issues, please email us at
+This repository contains documentation and example apps for the Lever Postings
+REST API. This API is designed to help you create a jobs site. If you need any
+features which are missing in this API or if you find any issues, please email us at
 [support@lever.co](mailto:support@lever.co) or file an issue on this repository.
 
 You do not need to use this API to get started with Lever job postings. All
@@ -14,7 +14,7 @@ published job postings are also automatically viewable via
 
 - Get paginated job postings for your company
 - Get job postings which match particular queries
-- Get individual job postings (if you know their ID)
+- Get individual job postings (if you know their Posting ID)
 - Programatically apply to a job posting
 
 
@@ -22,26 +22,26 @@ published job postings are also automatically viewable via
 
 - Let you do full-text searches over open jobs
 - Support CORS headers for posting jobs from sites that are different from your
-  google domain or a subdomain. This means you can't make a pure-javascript job
+  domain or a subdomain. This means you can't make a pure-JavaScript job
   postings page if your jobs site isn't yourdomain.com or
   something.yourdomain.com.
 - Let you access internal job postings.
 - Provide an iframe view for job detail pages or for application forms. You
   should either send applicants to the jobs site hosted at jobs.lever.co or build
-  your own detail view & application form on top of our JSON API.
-- Let you specify custom success & error URLs for job postings.
-- Expose custom questions
-- Add referal information
+  your own detail view and application form on top of our JSON API.
+- Let you specify custom success and error URLs for job postings.
+- Expose custom questions built into your job postings.
+- Add referral information.
 
 If any of these shortcomings are annoying, please [reach out to
-us](mailto:support@lever.co) or file an issue and we'll prioritize the features
+us](mailto:support@lever.co) or file an issue and we'll prioritize the feature(s)
 you need.
 
 Note that all job postings in the `published` state are publically viewable.
 These jobs may be scraped by third parties. All other jobs are completely
 hidden from the jobs API.
 
-Note that application create requests are rate limited. You will need to properly handle 429 responses if you build a custom jobs page.
+Note that application create requests are rate limited. Your team will need to properly handle 429 responses if you build a custom jobs page.
 
 ### Examples
 
@@ -109,12 +109,12 @@ The API will return the data in three different formats:
 - **JSON**: *(recommended)* Jobs list as raw JSON. See below for a list of
   supplied fields.
 - **HTML**: The API returns jobs as HTML, which is designed to be inlined in
-  your page. The jobs are sent as an html `ul` list contained inside a `<div class='lever'>` for easy styling.
+  your page. The jobs are sent as an HTML `ul` list contained inside a `<div class='lever'>` for easy styling.
 - **iframe**: This returns HTML designed to be embedded in an iframe in your
-  jobs page. The html will import a CSS stylesheet from a url specified by the
+  jobs page. The HTML will import a CSS stylesheet from a URL specified by the
   `css=` parameter. Like HTML mode, the jobs are listed in a `ul` inside a
   `class='lever'` div. To make the iframe size itself correctly (to remove
-  scroll bars), see the section on iframe resizing below.
+  scroll bars), please see the section on iframe resizing below.
 
 You can use the HTTP `Accept: application/json` header or `&mode=json` GET
 parameter to specify the output mode. The URL parameter has higher precedence.
@@ -123,7 +123,7 @@ Fetch published job postings.
 
 | Query parameter | Description                   |
 | --------------- | ----------------------------- |
-| mode            | The rendering output mode. json, iframe or html. |
+| mode            | The rendering output mode. JSON, iframe or HTML. |
 | skip            | skip N from the start         |
 | limit           | only return at most N results |
 | location        | Filter postings by location. You can specify multiple values and they are *OR*'ed together. Note: when specifying multiple values, this field is case sensitive! |
@@ -131,7 +131,7 @@ Fetch published job postings.
 | team            | Filter postings by team. You can specify multiple values and they are *OR*'ed together. Note: when specifying multiple values, this field is case sensitive! |
 | level           | Filter postings by level. |
 | group           | May be one of `location`, `commitment`, or `team`. Returns results grouped by category |
-| css             | In iframe mode, the URL of a css stylesheet |
+| css             | In iframe mode, the URL of a CSS stylesheet |
 | resize          | In iframe mode, the URL of an HTML page with a script for resizing the iframe. (See usage below) |
 
 
@@ -139,15 +139,14 @@ In JSON mode, each job posting is a JSON object with the following fields:
 
 | Field       | Description                   |
 | ----------- | ----------------------------- |
-| id          | Unique Job ID
-| text        | Posting name
+| id          | Unique job posting ID
+| text        | Job posting name
 | categories  | Object with location, commitment and team
 | description | Job description
-| lists       | Extra lists of things like requirements from the job posting. This is a list of `{text:NAME, content:"unstyled HTML of list elements"}`
-| additional  | Optional closing content for the job posting. May be an empty string.
-| id          | Unique Job ID
-| hostedUrl   | A URL which points to lever's hosted job posting page. [Example](https://jobs.lever.co/leverdemo/5ac21346-8e0c-4494-8e7a-3eb92ff77902)
-| applyUrl    | A URL which points to lever's hosted application form to apply to the job posting. [Example](https://jobs.lever.co/leverdemo/5ac21346-8e0c-4494-8e7a-3eb92ff77902/apply)
+| lists       | Extra lists (such as requirements, benefits, etc.) from the job posting. This is a list of `{text:NAME, content:"unstyled HTML of list elements"}`
+| additional  | Optional closing content for the job posting. This may be an empty string.
+| hostedUrl   | A URL which points to Lever's hosted job posting page. [Example](https://jobs.lever.co/leverdemo/5ac21346-8e0c-4494-8e7a-3eb92ff77902)
+| applyUrl    | A URL which points to Lever's hosted application form to apply to the job posting. [Example](https://jobs.lever.co/leverdemo/5ac21346-8e0c-4494-8e7a-3eb92ff77902/apply)
 
 
 
@@ -159,7 +158,7 @@ Example [https://api.lever.co/v0/postings/leverdemo/5ac21346-8e0c-4494-8e7a-3eb9
 
 Get the named job posting by id. The fields which are available are the same as
 the fields exposed by the list API (above). This API only returns the named job
-posting in JSON format. (There is no iframe view or inline html view).
+posting in JSON format. (There is no iframe view or inline HTML view).
 
 
 ## Apply to a job posting
@@ -174,8 +173,7 @@ The API is modelled off our our hosted jobs form. If in doubt about custom
 fields, look at any job application form on jobs.lever.co, [for example
 here](https://jobs.lever.co/leverdemo/491029da-9b63-4208-83f6-c976b6fe2ac5/apply).
 
-To use the POST API you need an API key. For now, this must be configured by a
-lever employee. Contact support and they can set you up.
+To use the POST API you need an API key, which a Super Admin of your account can generate at https://hire.lever.co/settings/integrations?tab=api
 
 When testing be aware that we dedup candidates using their email address. You
 won't see duplicate testing candidates appear on hire.lever.co.
@@ -192,7 +190,7 @@ required. The candidate will be emailed after they apply to the job, unless the 
 | `resume`            | Resume data. Only in `multipart/form-data` mode. Should be a file.
 | `phone`             | Phone number
 | `org`               | Current company / organization
-| `urls`              | URLs for sites (Github, Twitter, LinkedIn, Portfolio, Other, etc). Should be a JSON map or individual urls[GitHub], urls[Twitter], etc fields
+| `urls`              | URLs for sites (Github, Twitter, LinkedIn, Dribbble, etc). Should be a JSON map or individual urls[GitHub], urls[Twitter], etc fields
 | `comments`          | Additional information from the candidate
 | `silent`            | Disables confirmation email sent to candidates upon application
 
