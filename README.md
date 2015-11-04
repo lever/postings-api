@@ -169,9 +169,7 @@ You can add job applicants via a custom form on your site. Our API accepts
 candidate information in either JSON format or multipart form-data. However,
 our API only accepts resumes in multipart form data mode. Use a `Content-Type` header to instruct our server which format you're using. (Either `application/json` for JSON or `application/x-www-form-urlencoded` or `multipart/form-data` as appropriate).
 
-The API is modelled off our our hosted jobs form. If in doubt about custom
-fields, look at any job application form on jobs.lever.co, [for example
-here](https://jobs.lever.co/leverdemo/491029da-9b63-4208-83f6-c976b6fe2ac5/apply).
+The API is modeled off our hosted jobs form. Required fields and url fields can be customized per account. To determine what the job form looks like, look at any job application form for your account on jobs.lever.co or visit [your job site settings page](https://hire.lever.co/settings/site).
 
 To use the POST API you need an API key, which a Super Admin of your account can generate at https://hire.lever.co/settings/integrations?tab=api
 
