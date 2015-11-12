@@ -191,7 +191,7 @@ required. The candidate will be emailed after they apply to the job, unless the 
 | `urls`              | URLs for sites (Github, Twitter, LinkedIn, Dribbble, etc). Should be a JSON map or individual urls[GitHub], urls[Twitter], etc fields
 | `comments`          | Additional information from the candidate
 | `silent`            | Disables confirmation email sent to candidates upon application
-
+| `source`             | Adds a source tag to candidate (e.g. 'LinkedIn')
 
 The server will respond with JSON object.
 
