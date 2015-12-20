@@ -142,9 +142,9 @@ In JSON mode, each job posting is a JSON object with the following fields:
 | id          | Unique job posting ID
 | text        | Job posting name
 | categories  | Object with location, commitment and team
-| description | Job description
+| description | Job description (as styled HTML).
 | lists       | Extra lists (such as requirements, benefits, etc.) from the job posting. This is a list of `{text:NAME, content:"unstyled HTML of list elements"}`
-| additional  | Optional closing content for the job posting. This may be an empty string.
+| additional  | Optional closing content for the job posting (as styled HTML). This may be an empty string.
 | hostedUrl   | A URL which points to Lever's hosted job posting page. [Example](https://jobs.lever.co/leverdemo/5ac21346-8e0c-4494-8e7a-3eb92ff77902)
 | applyUrl    | A URL which points to Lever's hosted application form to apply to the job posting. [Example](https://jobs.lever.co/leverdemo/5ac21346-8e0c-4494-8e7a-3eb92ff77902/apply)
 
