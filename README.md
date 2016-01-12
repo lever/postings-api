@@ -15,7 +15,7 @@ published job postings are also automatically viewable via
 - Get paginated job postings for your company
 - Get job postings which match particular queries
 - Get individual job postings (if you know their Posting ID)
-- Programatically apply to a job posting
+- Programmatically apply to a job posting
 
 
 ### The API does not:
