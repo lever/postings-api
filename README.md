@@ -126,9 +126,9 @@ Fetch published job postings.
 | mode            | The rendering output mode. JSON, iframe or HTML. |
 | skip            | skip N from the start         |
 | limit           | only return at most N results |
-| location        | Filter postings by location. You can specify multiple values and they are *OR*'ed together. Note: when specifying multiple values, this field is case sensitive! |
-| commitment      | Filter postings by commitment. You can specify multiple values and they are *OR*'ed together. Note: when specifying multiple values, this field is case sensitive! |
-| team            | Filter postings by team. You can specify multiple values and they are *OR*'ed together. Note: when specifying multiple values, this field is case sensitive! |
+| location        | Filter postings by location. You can specify multiple values and they are *OR*'ed together. Note: when specifying multiple values, this field is case sensitive! To specify multiple values, use the format `?location=Oakland&location=Boston`. |
+| commitment      | Filter postings by commitment. You can specify multiple values and they are *OR*'ed together. Note: when specifying multiple values, this field is case sensitive! To specify multiple values, use the format `?commitment=Fulltime&commitment=Intern`. |
+| team            | Filter postings by team. You can specify multiple values and they are *OR*'ed together. Note: when specifying multiple values, this field is case sensitive! To specify multiple values, use the format `?team=Product&team=Engineering`. |
 | level           | Filter postings by level. |
 | group           | May be one of `location`, `commitment`, or `team`. Returns results grouped by category |
 | css             | In iframe mode, the URL of a CSS stylesheet |
