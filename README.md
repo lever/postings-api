@@ -175,8 +175,11 @@ The API is modeled off our hosted jobs form. Required fields and url fields can 
 
 To use the POST API you need an API key, which a Super Admin of your account can generate at https://hire.lever.co/settings/integrations?tab=api
 
-When testing be aware that we dedup candidates using their email address. You
-won't see duplicate testing candidates appear on hire.lever.co.
+Two fields are required by our system in order to create a candidate: name and email address. Required fields are also required when submitting against the POST API. Lever account administrators can customize their job applications and choose to make other fields required, too. Please make sure you coordinate with your Lever administrator to learn which fields on the job application they've seleved as required.
+
+When testing, be aware that Lever de-dupes candidates using the email address field. You won't see duplicate testing candidates appear within your Lever account at hire.lever.co.
+
+If you don't have email addresses of the candidate available and you MUST create a candidate, you can submit any string that is unique and includes an "@" symbol. If you have a standard string, we will merge candidate records using that string.
 
 Except for resume uploading, all of the fields are available in both JSON mode
 and multipart form-data mode. The name and email address fields are both
@@ -186,7 +189,7 @@ required. The candidate will be emailed after they apply to the job, unless the 
 | Field             | Description                   |
 | ----------------- | ----------------------------- |
 | `name` (*required*) | Candidate's name
-| `email` (*required*)| Email address
+| `email` (*required*)| Email address. Requires an @-symbol. Candidate records will be merged when email addresses match. 
 | `resume`            | Resume data. Only in `multipart/form-data` mode. Should be a file.
 | `phone`             | Phone number
 | `org`               | Current company / organization
