@@ -1,5 +1,7 @@
 # Lever Postings API
 
+![job postings api](https://cloud.githubusercontent.com/assets/1847828/19331557/2c2a5e9c-909a-11e6-8eb4-161bd37aeea3.jpg)
+
 This repository contains documentation and example apps for the Lever Postings
 REST API. This API is designed to help you create a jobs site. If you need any
 features which are missing in this API or if you find any issues, please email us at
