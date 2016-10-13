@@ -2,6 +2,20 @@
 
 ![job postings api](https://cloud.githubusercontent.com/assets/1847828/19331557/2c2a5e9c-909a-11e6-8eb4-161bd37aeea3.jpg)
 
+## Table of contents
+
+* [Introduction](https://github.com/lever/postings-api/blob/master/README.md#introduction)
+* [Examples](https://github.com/lever/postings-api/blob/master/README.md#examples)
+* [API methods](https://github.com/lever/postings-api/blob/master/README.md#api-methods)
+  * [Sites](https://github.com/lever/postings-api/blob/master/README.md#sites)
+  * [Get a list of job postings](https://github.com/lever/postings-api/blob/master/README.md#get-a-list-of-job-postings)
+  * [Get a specific job posting](https://github.com/lever/postings-api/blob/master/README.md#get-a-specific-job-posting)
+  * [Apply to a job posting](https://github.com/lever/postings-api/blob/master/README.md#apply-to-a-job-posting)
+  * [iFrame resizing](https://github.com/lever/postings-api/blob/master/README.md#iframe-resizing)
+
+
+## Introduction
+
 This repository contains documentation and example apps for the Lever Postings
 REST API. This API is designed to help you create a jobs site. If you need any
 features which are missing in this API or if you find any issues, please email us at
@@ -46,7 +60,7 @@ hidden from the jobs API.
 Note that application create requests are rate limited. Your team will need to properly handle 429 responses if you build a custom jobs page.
 
 ### Examples
-
+[](#examples)
 These examples use the jQuery.ajax function to get lists of jobs.
 
 [Simple list with two column layout](http://codepen.io/andreasmb/pen/uogcI)
