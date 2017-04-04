@@ -145,6 +145,7 @@ Fetch published job postings.
 | location        | Filter postings by location. You can specify multiple values and they are *OR*'ed together. Note: when specifying multiple values, this field is case sensitive! To specify multiple values, use the format `?location=Oakland&location=Boston`. |
 | commitment      | Filter postings by commitment. You can specify multiple values and they are *OR*'ed together. Note: when specifying multiple values, this field is case sensitive! To specify multiple values, use the format `?commitment=Fulltime&commitment=Intern`. |
 | team            | Filter postings by team. You can specify multiple values and they are *OR*'ed together. Note: when specifying multiple values, this field is case sensitive! To specify multiple values, use the format `?team=Product&team=Engineering`. |
+| department            | Filter postings by department, if your company uses departments. You can specify multiple values and they are *OR*'ed together. Note: when specifying multiple values, this field is case sensitive! To specify multiple values, use the format `?department=Legal&department=Operations`. |
 | level           | Filter postings by level. |
 | group           | May be one of `location`, `commitment`, or `team`. Returns results grouped by category |
 | css             | In iframe mode, the URL of a CSS stylesheet |
@@ -157,7 +158,7 @@ In JSON mode, each job posting is a JSON object with the following fields:
 | ----------- | ----------------------------- |
 | id          | Unique job posting ID
 | text        | Job posting name
-| categories  | Object with location, commitment and team
+| categories  | Object with location, commitment, team, and department
 | description | Job description (as styled HTML).
 | descriptionPlain | Job description (as plaintext).
 | lists       | Extra lists (such as requirements, benefits, etc.) from the job posting. This is a list of `{text:NAME, content:"unstyled HTML of list elements"}`
