@@ -12,6 +12,7 @@
   * [Get a specific job posting](https://github.com/lever/postings-api/blob/master/README.md#get-a-specific-job-posting)
   * [Apply to a job posting](https://github.com/lever/postings-api/blob/master/README.md#apply-to-a-job-posting)
   * [iFrame resizing](https://github.com/lever/postings-api/blob/master/README.md#iframe-resizing)
+ * [Third-party Libraries](https://github.com/lever/postings-api/blob/master/README.md#third-party-libraries)
 
 
 ## Introduction
@@ -293,4 +294,11 @@ At the `resize` URL (e.g. `https://example.com/resizeiframe.html`), you should s
 </script>
 ```
 
+## Third-party Libraries
 
+Some developers have kindly contributed Posting API clients for different programming languages. If you know something that is missing from this page, please [create a pull request](https://github.com/lever/postings-api/pull/new/master).
+
+Please note that the software is not endorsed or certified by Lever.
+
+### PHP
+* [mjacobus/lever-api-client](https://github.com/mjacobus/lever-api-client)
