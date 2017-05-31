@@ -301,4 +301,4 @@ Some developers have kindly contributed Posting API clients for different progra
 Please note that the software is not endorsed or certified by Lever.
 
 ### PHP
-* <https://github.com/mjacobus/lever-api-client>
+* [mjacobus/lever-api-client](https://github.com/mjacobus/lever-api-client)
