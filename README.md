@@ -302,3 +302,8 @@ Please note that the software is not endorsed or certified by Lever.
 
 ### PHP
 * [mjacobus/lever-api-client](https://github.com/mjacobus/lever-api-client)
+
+### Gatsby - Blazing-fast static site generator for React
+* [mjacobus/lever-api-client](https://www.gatsbyjs.org/packages/gatsby-source-lever/)
+
+
