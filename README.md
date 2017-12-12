@@ -101,6 +101,8 @@ responses are HTML (for inlining) or serialized [JSON](http://json.org/).
 All API methods are exposed under `https://api.lever.co/v0/postings/`. The API
 is not available via unencrypted HTTP.
 
+All URL parameters must be properly URL encoded.
+
 The API will output HTML or JSON based on the `Accept:` header and the `?mode=`
 query parameter. If both are provided, the query parameter has a higher
 precedence.
