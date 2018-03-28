@@ -193,9 +193,9 @@ our API only accepts resumes in multipart form data mode. Use a `Content-Type` h
 
 The API is modeled off our hosted jobs form. Required fields and url fields can be customized per account. To determine what the job form looks like, look at any job application form for your account on jobs.lever.co or visit [your job site settings page](https://hire.lever.co/settings/site).
 
-To use the POST API you need an API key, which a Super Admin of your account can generate at https://hire.lever.co/settings/integrations?tab=api
+To use the POST API, you need an API key, which a Super Admin of your account can generate at https://hire.lever.co/settings/integrations?tab=api
 
-Two fields are required by our system in order to create a candidate: name and email address. Required fields are also required when submitting against the POST API. Lever account administrators can customize their job applications and choose to make other fields required, too. Please make sure you coordinate with your Lever administrator to learn which fields on the job application they've seleved as required.
+Two fields are required by our system in order to create a candidate: name and email address. Required fields are also required when submitting against the POST API. Lever account administrators can customize their job applications and choose to make other fields required, too. Please make sure you coordinate with your Lever administrator to learn which fields on the job application they've selected as required.
 
 When testing, be aware that Lever de-dupes candidates using the email address field. You won't see duplicate testing candidates appear within your Lever account at hire.lever.co.
 
@@ -205,18 +205,19 @@ Except for resume uploading, all of the fields are available in both JSON mode
 and multipart form-data mode. The name and email address fields are both
 required. The candidate will be emailed after they apply to the job, unless the `silent` field is set to true.
 
-
-| Field             | Description                   |
-| ----------------- | ----------------------------- |
+| Field               | Description                   |
+| ------------------- | ----------------------------- |
 | `name` (*required*) | Candidate's name
-| `email` (*required*)| Email address. Requires an @-symbol. Candidate records will be merged when email addresses match. 
+| `email` (*required*)| Email address. Requires an "@" symbol. Candidate records will be merged when email addresses match.
 | `resume`            | Resume data. Only in `multipart/form-data` mode. Should be a file.
 | `phone`             | Phone number
 | `org`               | Current company / organization
-| `urls`              | URLs for sites (Github, Twitter, LinkedIn, Dribbble, etc). Should be a JSON map or individual urls[GitHub], urls[Twitter], etc fields
+| `urls`              | URLs for sites (Github, Twitter, LinkedIn, Dribbble, etc). Should be a JSON object like `{"GitHub":"https://github.com/"}`
 | `comments`          | Additional information from the candidate
-| `silent`            | Disables confirmation email sent to candidates upon application. Accepts values of true, false, "true" or "false".
-| `source`             | Adds a source tag to candidate (e.g. 'LinkedIn')
+| `silent`            | Disables confirmation email sent to candidates upon application. Accepts values of `true`, `false`, `"true"` or `"false"`.
+| `source`            | Adds a source tag to candidate (e.g. 'LinkedIn')
+| `ip`                | IP application was submitted from, used for detecting country for compliance reasons (e.g. `"184.23.195.146"`)
+| `consent`           | Indicate whether candidate is open to being contacted about future opportunities. Should be a JSON object like `{"marketing":true}`
 
 The server will respond with JSON object.
 
@@ -307,5 +308,3 @@ Please note that the software is not endorsed or certified by Lever.
 
 ### Gatsby - Blazing-fast static site generator for React
 * [mjacobus/lever-api-client](https://www.gatsbyjs.org/packages/gatsby-source-lever/)
-
-
