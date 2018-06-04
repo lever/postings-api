@@ -217,7 +217,7 @@ required. The candidate will be emailed after they apply to the job, unless the 
 | `silent`            | Disables confirmation email sent to candidates upon application. Accepts values of `true`, `false`, `"true"` or `"false"`.
 | `source`            | Adds a source tag to candidate (e.g. 'LinkedIn')
 | `ip`                | IP application was submitted from, used for detecting country for compliance reasons (e.g. `"184.23.195.146"`)
-| `consent`           | Indicate whether candidate is open to being contacted about future opportunities. Should be a JSON object like `{"marketing":true}`
+| `consent`           | Indicate whether candidate is open to being contacted about future opportunities (e.g. `"consent":{"marketing":true}` for `JSON` or `consent[marketing]=true` for `multipart/form-data`)
 
 The server will respond with JSON object.
 
