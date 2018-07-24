@@ -212,7 +212,7 @@ required. The candidate will be emailed after they apply to the job, unless the 
 | `resume`            | Resume data. Only in `multipart/form-data` mode. Should be a file.
 | `phone`             | Phone number
 | `org`               | Current company / organization
-| `urls`              | URLs for sites (Github, Twitter, LinkedIn, Dribbble, etc). Should be a JSON object like `{"GitHub":"https://github.com/"}`
+| `urls`              | URLs for sites (Github, Twitter, LinkedIn, Dribbble, etc). Should be a JSON object like `{"GitHub":"https://github.com/"}` for `JSON`, or `urls[GitHub]=https://github.com/` for `multipart/form-data`
 | `comments`          | Additional information from the candidate
 | `silent`            | Disables confirmation email sent to candidates upon application. Accepts values of `true`, `false`, `"true"` or `"false"`.
 | `source`            | Adds a source tag to candidate (e.g. 'LinkedIn')
