@@ -38,10 +38,8 @@ published job postings are also automatically viewable via
 ### The API does not:
 
 - Let you do full-text searches over open jobs
-- Support CORS headers for posting jobs from sites that are different from your
-  domain or a subdomain. This means you can't make a pure-JavaScript job
-  postings page if your jobs site isn't yourdomain.com or
-  something.yourdomain.com.
+- Support cross-origin HTTP requests from sites outside of your company's domains/subdomains.
+    - Note: The postings API _does_ support cross-origin requests from your company's domains/subdomains, via CORS. For example, requests from `yourcompanyname.com` and subdomains like `careers.yourcompanyname.com` are allowed.
 - Let you access internal job postings.
 - Provide an iframe view for job detail pages or for application forms. You
   should either send applicants to the jobs site hosted at jobs.lever.co or build
