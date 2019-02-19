@@ -56,8 +56,6 @@ Note that all job postings in the `published` state are publically viewable.
 These jobs may be scraped by third parties. All other jobs are completely
 hidden from the jobs API.
 
-**WARNING: Application create requests are rate limited. Your team will need to properly handle `429` responses if you build a custom jobs page.**
-
 ### Examples
 [](#examples)
 These examples use the jQuery.ajax function to get lists of jobs.
@@ -88,8 +86,6 @@ Displays all jobs alphabetically, with each job in a card.
 Displays jobs in a single column, with a cover image on top.
 
 [<img src="https://raw.github.com/lever/postings-API/master/images/1col-hero-image.jpg">](http://codepen.io/andreasmb/pen/kJfrc)
-
-
 
 # API Methods
 
@@ -223,7 +219,15 @@ The server will respond with JSON object.
 - The applicationId returned can be used to view the candidate profile in Lever at the url: `https://hire.lever.co/search/application/{applicationId}`. Note that only users logged in to Lever will be able to access that page.
 - On error, we'll send the appropriate HTTP error code and a body of `{ok:false, error:<error string>}`.
 
+### WARNING: Rate limit
 
+**Application create requests are rate limited. Your team will need to properly handle `429` responses if you build a custom jobs page.**
+
+To prevent spam and protect system integrity, Lever will return a `429` status code (`TOO MANY REQUESTS`) if your custom job site issues more than 2 application POST requests per second. Mitigate this by:
+
+* queueing the requests
+* retrying the requests
+* custom-ignoring spam requests
 
 ## Iframe resizing
 
