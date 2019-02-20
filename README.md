@@ -219,15 +219,16 @@ The server will respond with JSON object.
 - The applicationId returned can be used to view the candidate profile in Lever at the url: `https://hire.lever.co/search/application/{applicationId}`. Note that only users logged in to Lever will be able to access that page.
 - On error, we'll send the appropriate HTTP error code and a body of `{ok:false, error:<error string>}`.
 
-### WARNING: Rate limit
+### WARNING: POST Application Rate limit
 
-**Application create requests are rate limited. Your team will need to properly handle `429` responses if you build a custom jobs page.**
+**Application create requests are rate limited. Your team will need to properly handle `429` responses if you build a custom job application page.**
 
 To prevent spam and protect system integrity, Lever will return a `429` status code (`TOO MANY REQUESTS`) if your custom job site issues more than 2 application POST requests per second. Mitigate this by:
 
-* queueing the requests
-* retrying the requests
-* custom-ignoring spam requests
+* redirecting to the respective Lever-hosted application form
+* queueing the application requests
+* retrying the application requests
+* custom-ignoring spam application requests
 
 ## Iframe resizing
 
