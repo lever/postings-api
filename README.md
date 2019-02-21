@@ -176,8 +176,9 @@ Get the named job posting by id. The fields which are available are the same as
 the fields exposed by the list API (above). This API only returns the named job
 posting in JSON format. (There is no iframe view or inline HTML view).
 
-
 ## Apply to a job posting
+
+**WARNING: Application create requests are rate limited. Your team will need to properly handle `429` responses if you build a custom job application page.** If you are unable to implement this logic, please consider directing to Lever's hosted application form instead of implementing a custom application form. [See more below](#POST-Application-Rate-Limit).
 
 > POST /v0/postings/SITE/POSTING-ID?key=APIKEY
 
@@ -219,16 +220,19 @@ The server will respond with JSON object.
 - The applicationId returned can be used to view the candidate profile in Lever at the url: `https://hire.lever.co/search/application/{applicationId}`. Note that only users logged in to Lever will be able to access that page.
 - On error, we'll send the appropriate HTTP error code and a body of `{ok:false, error:<error string>}`.
 
-### WARNING: POST Application Rate limit
+### POST Application Rate Limit
 
-**Application create requests are rate limited. Your team will need to properly handle `429` responses if you build a custom job application page.**
+To guard against possible misuse of Lever's APIs and maintain high availability, Lever will return a `429` status code (`TOO MANY REQUESTS`) if your custom job site issues more than 2 application POST requests per second. This rate limit may also be changed without warning if necessary to maintain the stability of Lever's systems. To avoid losing applicants, you must either implement your own logic to queue and retry application POST requests that receive a 429 response or direct candidates to Lever's hosted application form.
 
-To prevent spam and protect system integrity, Lever will return a `429` status code (`TOO MANY REQUESTS`) if your custom job site issues more than 2 application POST requests per second. Mitigate this by:
+When implementing a custom job site, directing candidates to Lever's hosted application form is considered a best practice. Lever's application form properly handles all custom form configurations, has an excellent candidate experience, and maintains very high availability including queuing and retries at peak times.
 
-* redirecting to the respective Lever-hosted application form
-* queueing the application requests
-* retrying the application requests
-* custom-ignoring spam application requests
+If you do choose to implement a fully custom application form, please remember to:
+
+* Retry all requests that receive a 429 response
+* Queue application requests in case you receive a temporary increase in applications that exceeds Lever's application POST rate limit
+* Implement spam mitigations such as captchas and session or IP based rate limits
+
+If you do not retry application POST requests upon receiving a 429 response, you will unfortunately lose candidate applications.
 
 ## Iframe resizing
 
