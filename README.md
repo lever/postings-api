@@ -91,7 +91,7 @@ Displays jobs in a single column, with a cover image on top.
 
 Uses List.js to add search and filtering functionality similar to the Lever-hosted career pages.
 
-![image](https://user-images.githubusercontent.com/1847828/65989057-d178be80-e43d-11e9-8999-8195681c5f68.png)
+[<img src="https://user-images.githubusercontent.com/1847828/65989057-d178be80-e43d-11e9-8999-8195681c5f68.png">](https://codepen.io/andreasmb/pen/pXJeLB)
 
 # API Methods
 
