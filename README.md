@@ -56,7 +56,7 @@ Note that all job postings in the `published` state are publically viewable.
 These jobs may be scraped by third parties. All other jobs are completely
 hidden from the jobs API.
 
-### Examples
+## Examples
 [](#examples)
 These examples use the jQuery.ajax function to get lists of jobs.
 
@@ -86,6 +86,12 @@ Displays all jobs alphabetically, with each job in a card.
 Displays jobs in a single column, with a cover image on top.
 
 [<img src="https://raw.github.com/lever/postings-API/master/images/1col-hero-image.jpg">](http://codepen.io/andreasmb/pen/kJfrc)
+
+[Search and filtering example](https://codepen.io/andreasmb/pen/pXJeLB)
+
+Uses List.js to add search and filtering functionality similar to the Lever-hosted career pages.
+
+![image](https://user-images.githubusercontent.com/1847828/65989057-d178be80-e43d-11e9-8999-8195681c5f68.png)
 
 # API Methods
 
