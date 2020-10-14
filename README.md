@@ -4,15 +4,15 @@
 
 ## Table of contents
 
-* [Introduction](https://github.com/lever/postings-api/blob/master/README.md#introduction)
-* [Examples](https://github.com/lever/postings-api/blob/master/README.md#examples)
-* [API methods](https://github.com/lever/postings-api/blob/master/README.md#api-methods)
-  * [Sites](https://github.com/lever/postings-api/blob/master/README.md#sites)
-  * [Get a list of job postings](https://github.com/lever/postings-api/blob/master/README.md#get-a-list-of-job-postings)
-  * [Get a specific job posting](https://github.com/lever/postings-api/blob/master/README.md#get-a-specific-job-posting)
-  * [Apply to a job posting](https://github.com/lever/postings-api/blob/master/README.md#apply-to-a-job-posting)
-  * [iFrame resizing](https://github.com/lever/postings-api/blob/master/README.md#iframe-resizing)
- * [Third-party Libraries](https://github.com/lever/postings-api/blob/master/README.md#third-party-libraries)
+* [Introduction](https://github.com/lever/postings-api/blob/eu/README.md#introduction)
+* [Examples](https://github.com/lever/postings-api/blob/eu/README.md#examples)
+* [API methods](https://github.com/lever/postings-api/blob/eu/README.md#api-methods)
+  * [Sites](https://github.com/lever/postings-api/blob/eu/README.md#sites)
+  * [Get a list of job postings](https://github.com/lever/postings-api/blob/eu/README.md#get-a-list-of-job-postings)
+  * [Get a specific job posting](https://github.com/lever/postings-api/blob/eu/README.md#get-a-specific-job-posting)
+  * [Apply to a job posting](https://github.com/lever/postings-api/blob/eu/README.md#apply-to-a-job-posting)
+  * [iFrame resizing](https://github.com/lever/postings-api/blob/eu/README.md#iframe-resizing)
+ * [Third-party Libraries](https://github.com/lever/postings-api/blob/eu/README.md#third-party-libraries)
 
 
 ## Introduction
