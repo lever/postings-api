@@ -4,7 +4,7 @@ var request = require('request');
 // Change this to your postings site shortname.
 var SITE = 'lever';
 
-var BASE = 'https://api.lever.co/v0/postings/' + SITE;
+var BASE = 'https://api.eu.lever.co/v0/postings/' + SITE;
 
 var app = express();
 
