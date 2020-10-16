@@ -4,28 +4,28 @@
 
 ## Table of contents
 
-* [Introduction](https://github.com/lever/postings-api/blob/eu/README.md#introduction)
-* [Examples](https://github.com/lever/postings-api/blob/eu/README.md#examples)
-* [API methods](https://github.com/lever/postings-api/blob/eu/README.md#api-methods)
-  * [Sites](https://github.com/lever/postings-api/blob/eu/README.md#sites)
-  * [Get a list of job postings](https://github.com/lever/postings-api/blob/eu/README.md#get-a-list-of-job-postings)
-  * [Get a specific job posting](https://github.com/lever/postings-api/blob/eu/README.md#get-a-specific-job-posting)
-  * [Apply to a job posting](https://github.com/lever/postings-api/blob/eu/README.md#apply-to-a-job-posting)
-  * [iFrame resizing](https://github.com/lever/postings-api/blob/eu/README.md#iframe-resizing)
- * [Third-party Libraries](https://github.com/lever/postings-api/blob/eu/README.md#third-party-libraries)
+* [Introduction](https://github.com/lever/postings-api/blob/master/README.md#introduction)
+* [Examples](https://github.com/lever/postings-api/blob/master/README.md#examples)
+* [API methods](https://github.com/lever/postings-api/blob/master/README.md#api-methods)
+  * [Sites](https://github.com/lever/postings-api/blob/master/README.md#sites)
+  * [Get a list of job postings](https://github.com/lever/postings-api/blob/master/README.md#get-a-list-of-job-postings)
+  * [Get a specific job posting](https://github.com/lever/postings-api/blob/master/README.md#get-a-specific-job-posting)
+  * [Apply to a job posting](https://github.com/lever/postings-api/blob/master/README.md#apply-to-a-job-posting)
+  * [iFrame resizing](https://github.com/lever/postings-api/blob/master/README.md#iframe-resizing)
+ * [Third-party Libraries](https://github.com/lever/postings-api/blob/master/README.md#third-party-libraries)
 
 
 ## Introduction
 
 This repository contains documentation and example apps for the Lever Postings
-REST API. This API is designed to help you create a jobs site. If you need any
+REST API. This API is designed to help you create a job site. If you need any
 features which are missing in this API or if you find any issues, please email us at
 [support@lever.co](mailto:support@lever.co) or file an issue on this repository.
 
 You do not need to use this API to get started with Lever job postings. All
-published job postings are also automatically viewable via
-`jobs.eu.lever.co/yoursite`, for example
-[jobs.eu.lever.co/lever](https://jobs.eu.lever.co/leverdemo)
+published job postings are also automatically viewable via your Lever-hosted job site (e.g. `https://jobs.lever.co/leverdemo`).
+
+**NOTE:** When relevant, multiple URL examples are provided for the instances we support: `global` (default) and `EU`. 
 
 ### This API lets you:
 
@@ -37,12 +37,13 @@ published job postings are also automatically viewable via
 
 ### The API does not:
 
-- Let you do full-text searches over open jobs
+- Let you do full-text searches over open jobs.
 - Support cross-origin HTTP requests from sites outside of your company's domains/subdomains.
     - Note: The postings API _does_ support cross-origin requests from your company's domains/subdomains, via CORS. For example, requests from `yourcompanyname.com` and subdomains like `careers.yourcompanyname.com` are allowed.
 - Let you access internal job postings.
 - Provide an iframe view for job detail pages or for application forms. You
-  should either send applicants to the jobs site hosted at jobs.eu.lever.co or build
+  should either send applicants to the jobs site hosted at your Lever-hosted job site ([global][lever-job-site-global] / [EU][lever-job-site-eu]) or build
+  
   your own detail view and application form on top of our JSON API.
 - Let you specify custom success and error URLs for job postings.
 - Expose custom questions built into your job postings.
@@ -52,13 +53,13 @@ If any of these shortcomings are annoying, please [reach out to
 us](mailto:support@lever.co) or file an issue and we'll prioritize the feature(s)
 you need.
 
-Note that all job postings in the `published` state are publically viewable.
+Note that all job postings in the `published` state are publicly viewable.
 These jobs may be scraped by third parties. All other jobs are completely
 hidden from the jobs API.
 
 ## Examples
 [](#examples)
-These examples use the jQuery.ajax function to get lists of jobs.
+These examples use the jQuery.ajax function to get lists of jobs and all use the global instance base url (i.e. `https://api.lever.co/v0/postings/`)
 
 [Simple list with two column layout](http://codepen.io/andreasmb/pen/uogcI)
 
@@ -89,7 +90,7 @@ Displays jobs in a single column, with a cover image on top.
 
 [Search and filtering example](https://codepen.io/andreasmb/pen/pXJeLB)
 
-Uses List.js to add search and filtering functionality similar to the Lever-hosted career pages.
+Uses List.js to add search and filtering functionality similar to the Lever-hosted job site.
 
 [<img src="https://user-images.githubusercontent.com/1847828/65989057-d178be80-e43d-11e9-8999-8195681c5f68.png">](https://codepen.io/andreasmb/pen/pXJeLB)
 
@@ -98,8 +99,9 @@ Uses List.js to add search and filtering functionality similar to the Lever-host
 The API is [RESTful](http://www.infoq.com/articles/rest-introduction) and all
 responses are HTML (for inlining) or serialized [JSON](http://json.org/).
 
-All API methods are exposed under `https://api.eu.lever.co/v0/postings/`. The API
-is not available via unencrypted HTTP.
+All API methods are exposed under our postings base url ([global][postings-api-base-url-global] / [EU][postings-api-base-url-eu]).
+
+The API is not available via unencrypted HTTP.
 
 All URL parameters must be properly URL encoded.
 
@@ -110,18 +112,18 @@ precedence.
 
 ### Sites
 
-All job postings are namespaced within a unique site name. Each company
+All job postings are name-spaced within a unique site name. Each company
 currently only has one site (usually your company name with no spaces). For
 example, Lever's job postings are under the site name `lever`, so they appear
-at [https://api.eu.lever.co/v0/postings/lever](https://api.eu.lever.co/v0/postings/lever)
-or [https://jobs.eu.lever.co/lever/](https://jobs.eu.lever.co/lever/).
+at [this API link][lever-postings-api-global] and [this job site link][lever-job-site-global]
+for those on the global instance and [this API link][lever-postings-api-eu] and [this job site link][lever-job-site-eu] for those on the EU instance.
 
 
 ## Get a list of job postings
 
 > GET /v0/postings/SITE?skip=X&limit=Y
 
-Example [https://api.eu.lever.co/v0/postings/leverdemo?skip=1&limit=3&mode=json](https://api.eu.lever.co/v0/postings/leverdemo?skip=1&limit=3&mode=json)
+Examples: [global][leverdemo-postings-api-get-list-global] / [EU][leverdemo-postings-api-get-list-eu]
 
 The API will return the data in three different formats:
 
@@ -167,16 +169,14 @@ In JSON mode, each job posting is a JSON object with the following fields:
 | lists       | Extra lists (such as requirements, benefits, etc.) from the job posting. This is a list of `{text:NAME, content:"unstyled HTML of list elements"}`
 | additional  | Optional closing content for the job posting (as styled HTML). This may be an empty string.
 | additionalPlain  | Optional closing content for the job posting (as plaintext). This may be an empty string.
-| hostedUrl   | A URL which points to Lever's hosted job posting page. [Example](https://jobs.eu.lever.co/leverdemo/5ac21346-8e0c-4494-8e7a-3eb92ff77902)
-| applyUrl    | A URL which points to Lever's hosted application form to apply to the job posting. [Example](https://jobs.eu.lever.co/leverdemo/5ac21346-8e0c-4494-8e7a-3eb92ff77902/apply)
-
-
+| hostedUrl   | A URL which points to Lever's hosted job posting page. Examples: [global][leverdemo-job-site-posting-global] / [EU][leverdemo-job-site-posting-eu]
+| applyUrl    | A URL which points to Lever's hosted application form to apply to the job posting. Examples: [global][leverdemo-job-site-posting-application-global] / [EU][leverdemo-job-site-posting-application-eu]
 
 ## Get a specific job posting
 
 > GET /v0/postings/SITE/POSTING-ID
 
-Example [https://api.eu.lever.co/v0/postings/leverdemo/5ac21346-8e0c-4494-8e7a-3eb92ff77902](https://api.eu.lever.co/v0/postings/leverdemo/5ac21346-8e0c-4494-8e7a-3eb92ff77902)
+Examples: [global][leverdemo-postings-api-get-specific-posting-global] / [EU][leverdemo-postings-api-get-specific-posting-eu]
 
 Get the named job posting by id. The fields which are available are the same as
 the fields exposed by the list API (above). This API only returns the named job
@@ -192,13 +192,13 @@ You can add job applicants via a custom form on your site. Our API accepts
 candidate information in either JSON format or multipart form-data. However,
 our API only accepts resumes in multipart form data mode. Use a `Content-Type` header to instruct our server which format you're using. (Either `application/json` for JSON or `application/x-www-form-urlencoded` or `multipart/form-data` as appropriate).
 
-The API is modeled off our hosted jobs form. Required fields and url fields can be customized per account. To determine what the job form looks like, look at any job application form for your account on jobs.eu.lever.co or visit [your job site settings page](https://hire.eu.lever.co/settings/site).
+The API is modeled off our hosted jobs form. Required fields and url fields can be customized per account. To determine what the job form looks like, look at any job application form for on your Lever-hosted job site ([global][job-site-global] / [EU][job-site-eu]) or visit your job site settings page ([global][lever-job-site-settings-global] / [EU][lever-job-site-settings-eu]).
 
-To use the POST API, you need an API key, which a Super Admin of your account can generate at https://hire.eu.lever.co/settings/integrations?tab=api
+To use the POST API, you need an API key, which a Super Admin of your account can generate from your integrations settings page ([global][lever-integrations-settings-global] / [EU][lever-integrations-settings-eu]).
 
 Two fields are required by our system in order to create a candidate: name and email address. Required fields are also required when submitting against the POST API. Lever account administrators can customize their job applications and choose to make other fields required, too. Please make sure you coordinate with your Lever administrator to learn which fields on the job application they've selected as required.
 
-When testing, be aware that Lever de-dupes candidates using the email address field. You won't see duplicate testing candidates appear within your Lever account at hire.eu.lever.co.
+When testing, be aware that Lever de-dupes candidates using the email address field. You won't see duplicate testing candidates appear within your Lever account ([global][lever-site-global] / [EU][lever-site-eu])
 
 If you don't have email addresses of the candidate available and you MUST create a candidate, you can submit any string that is unique and includes an "@" symbol. If you have a standard string, we will merge candidate records using that string.
 
@@ -223,7 +223,8 @@ required. The candidate will be emailed after they apply to the job, unless the 
 The server will respond with JSON object.
 
 - On success, **200 OK** and a body of `{ok:true, applicationId: '...'}`
-- The applicationId returned can be used to view the candidate profile in Lever at the url: `https://hire.eu.lever.co/search/application/{applicationId}`. Note that only users logged in to Lever will be able to access that page.
+- The applicationId returned can be used to view the candidate profile in Lever by adding it to the end of this URL ([global][lever-application-search-global] / [EU][lever-application-search-eu]).
+  - Note that only users logged into Lever will be able to access that page.
 - On error, we'll send the appropriate HTTP error code and a body of `{ok:false, error:<error string>}`.
 
 ### POST Application Rate Limit
@@ -251,6 +252,8 @@ To work around this cross-domain restriction, the postings iframe can
 communicate its height via an HTML page also served from your domain. The URL
 of this page is passed in as the `resize` parameter in the Lever iframe URL.
 
+Below is a visual example using the global instance:
+
 ```
 |------------------------------------------------------------------------------------------------------------------|
 |  https://example.com/jobs                                                                                        |
@@ -258,7 +261,7 @@ of this page is passed in as the `resize` parameter in the Lever iframe URL.
 |  Your header, links, and other containing content.                                                               |
 |                                                                                                                  |
 |  |------------------------------------------------------------------------------------------------------------|  |
-|  |  https://api.eu.lever.co/v0/postings/box?mode=iframe&resize=https://example.com/resizeiframe.html             |  |
+|  |  https://api.lever.co/v0/postings/box?mode=iframe&resize=https://example.com/resizeiframe.html             |  |
 |  |                                                                                                            |  |
 |  |  List of jobs served by Lever                                                                              |  |
 |  |                                                                                                            |  |
@@ -275,8 +278,8 @@ In `https://example.com/jobs`, the Lever iframe should be embedded in a manner s
 
 ``` html
 <iframe id="postings-iframe" seamless frameborder="0" allowtransparency="true" scrolling="no"
-  src="https://api.eu.lever.co/v0/postings/example?mode=iframe&resize=https://example.com/resizeiframe.html">
-  Your browser does not appear to support iframes. See <a href="https://jobs.eu.lever.co/example">all job postings</a>.
+  src="https://api.lever.co/v0/postings/example?mode=iframe&resize=https://example.com/resizeiframe.html">
+  Your browser does not appear to support iframes. See <a href="https://jobs.lever.co/example">all job postings</a>.
 </iframe>
 <script type="text/javascript">
   function resizePostings(height) {
@@ -321,3 +324,28 @@ Please note that the software is not endorsed or certified by Lever.
 
 ### Gatsby - Blazing-fast static site generator for React
 * [mjacobus/lever-api-client](https://www.gatsbyjs.org/packages/gatsby-source-lever/)
+
+[job-site-global]: https://jobs.lever.co/
+[job-site-eu]: https://jobs.eu.lever.co/
+[leverdemo-job-site-posting-global]: https://jobs.lever.co/leverdemo/5ac21346-8e0c-4494-8e7a-3eb92ff77902
+[leverdemo-job-site-posting-eu]: https://jobs.eu.lever.co/leverdemo/5ac21346-8e0c-4494-8e7a-3eb92ff77902
+[leverdemo-job-site-posting-application-global]: https://jobs.lever.co/leverdemo/5ac21346-8e0c-4494-8e7a-3eb92ff77902/apply
+[leverdemo-job-site-posting-application-eu]: https://jobs.eu.lever.co/leverdemo/5ac21346-8e0c-4494-8e7a-3eb92ff77902/apply
+[leverdemo-postings-api-get-list-global]: https://api.lever.co/v0/postings/leverdemo?skip=1&limit=3&mode=json
+[leverdemo-postings-api-get-list-eu]: https://api.eu.lever.co/v0/postings/leverdemo?skip=1&limit=3&mode=json
+[leverdemo-postings-api-get-specific-posting-global]: https://api.lever.co/v0/postings/leverdemo/5ac21346-8e0c-4494-8e7a-3eb92ff77902
+[leverdemo-postings-api-get-specific-posting-eu]: https://api.eu.lever.co/v0/postings/leverdemo/5ac21346-8e0c-4494-8e7a-3eb92ff77902
+[postings-api-base-url-global]: https://api.lever.co/v0/postings/
+[postings-api-base-url-eu]: https://api.eu.lever.co/v0/postings/
+[lever-job-site-global]: https://jobs.lever.co/lever
+[lever-job-site-eu]: https://jobs.eu.lever.co/lever
+[lever-postings-api-global]: https://api.lever.co/v0/postings/lever
+[lever-postings-api-eu]: https://api.eu.lever.co/v0/postings/lever
+[lever-job-site-settings-global]: https://hire.lever.co/settings/site
+[lever-job-site-settings-eu]: https://hire.eu.lever.co/settings/site
+[lever-integrations-settings-global]: https://hire.lever.co/settings/integrations?tab=api
+[lever-integrations-settings-eu]: https://hire.eu.lever.co/settings/integrations?tab=api
+[lever-site-global]: https://hire.lever.co
+[lever-site-eu]: https://hire.eu.lever.co
+[lever-application-search-global]: https://hire.lever.co/search/application/
+[lever-application-search-eu]: https://hire.eu.lever.co/search/application/
