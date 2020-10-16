@@ -4,7 +4,10 @@ var request = require('request');
 // Change this to your postings site shortname.
 var SITE = 'lever';
 
-var BASE = 'https://api.eu.lever.co/v0/postings/' + SITE;
+// Change this to match your instance
+// - leave as-is if using a global instance, otherwise update to match your instance
+//   - e.g. 'https://api.eu.lever.co/v0/postings/' + SITE;
+var BASE = 'https://api.lever.co/v0/postings/' + SITE;
 
 var app = express();
 
