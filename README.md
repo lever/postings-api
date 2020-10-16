@@ -59,7 +59,7 @@ hidden from the jobs API.
 
 ## Examples
 [](#examples)
-These examples use the jQuery.ajax function to get lists of jobs and all use the global instance base url (i.e. `https://api.lever.co/v0/postings/`)
+These examples use the jQuery.ajax function to get lists of jobs and all use the global instance base url (i.e. `https://api.lever.co/v0/postings/`).
 
 [Simple list with two column layout](http://codepen.io/andreasmb/pen/uogcI)
 
@@ -198,7 +198,7 @@ To use the POST API, you need an API key, which a Super Admin of your account ca
 
 Two fields are required by our system in order to create a candidate: name and email address. Required fields are also required when submitting against the POST API. Lever account administrators can customize their job applications and choose to make other fields required, too. Please make sure you coordinate with your Lever administrator to learn which fields on the job application they've selected as required.
 
-When testing, be aware that Lever de-dupes candidates using the email address field. You won't see duplicate testing candidates appear within your Lever account ([global][lever-site-global] / [EU][lever-site-eu])
+When testing, be aware that Lever de-dupes candidates using the email address field. You won't see duplicate testing candidates appear within your Lever account ([global][lever-site-global] / [EU][lever-site-eu]).
 
 If you don't have email addresses of the candidate available and you MUST create a candidate, you can submit any string that is unique and includes an "@" symbol. If you have a standard string, we will merge candidate records using that string.
 
