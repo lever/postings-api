@@ -41,9 +41,7 @@ published job postings are also automatically viewable via your Lever-hosted job
     - Note: The postings API _does_ support cross-origin requests from your company's domains/subdomains, via CORS. For example, requests from `yourcompanyname.com` and subdomains like `careers.yourcompanyname.com` are allowed.
 - Let you access internal job postings.
 - Provide an iframe view for job detail pages or for application forms. You
-  should either send applicants to the jobs site hosted at your Lever-hosted job site ([global][lever-job-site-global] / [EU][lever-job-site-eu]) or build
-
-  your own detail view and application form on top of our JSON API.
+  should either send applicants to the jobs site hosted at your Lever-hosted job site ([global][lever-job-site-global] / [EU][lever-job-site-eu]) or build your own detail view and application form on top of our JSON API.
 - Let you specify custom success and error URLs for job postings.
 - Expose custom questions built into your job postings.
 - Add referral information.
