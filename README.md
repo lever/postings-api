@@ -19,13 +19,12 @@
 
 This repository contains documentation and example apps for the Lever Postings
 REST API. This API is designed to help you create a job site. If you need any
-features which are missing in this API or if you find any issues, please email us at
-[support@lever.co](mailto:support@lever.co) or file an issue on this repository.
+features which are missing in this API or if you find any issues, please [create a ticket at](https://help.lever.co/hc/en-us/requests/new) or file an issue on this repository.
 
 You do not need to use this API to get started with Lever job postings. All
 published job postings are also automatically viewable via your Lever-hosted job site (e.g. `https://jobs.lever.co/leverdemo`).
 
-**NOTE:** When relevant, multiple URL examples are provided for the instances we support: `global` (default) and `EU`. 
+**NOTE:** When relevant, multiple URL examples are provided for the instances we support: `global` (default) and `EU`.
 
 ### This API lets you:
 
@@ -42,15 +41,13 @@ published job postings are also automatically viewable via your Lever-hosted job
     - Note: The postings API _does_ support cross-origin requests from your company's domains/subdomains, via CORS. For example, requests from `yourcompanyname.com` and subdomains like `careers.yourcompanyname.com` are allowed.
 - Let you access internal job postings.
 - Provide an iframe view for job detail pages or for application forms. You
-  should either send applicants to the jobs site hosted at your Lever-hosted job site ([global][lever-job-site-global] / [EU][lever-job-site-eu]) or build
-  
-  your own detail view and application form on top of our JSON API.
+  should either send applicants to the jobs site hosted at your Lever-hosted job site ([global][lever-job-site-global] / [EU][lever-job-site-eu]) or build your own detail view and application form on top of our JSON API.
 - Let you specify custom success and error URLs for job postings.
 - Expose custom questions built into your job postings.
 - Add referral information.
 
-If any of these shortcomings are annoying, please [reach out to
-us](mailto:support@lever.co) or file an issue and we'll prioritize the feature(s)
+If you are concerned about any features, please [reach out to
+us](https://help.lever.co/hc/en-us/requests/new) and we'll prioritize the feature(s)
 you need.
 
 Note that all job postings in the `published` state are publicly viewable.
