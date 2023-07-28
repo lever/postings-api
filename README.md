@@ -169,7 +169,7 @@ In JSON mode, each job posting is a JSON object with the following fields:
 | additionalPlain  | Optional closing content for the job posting (as plaintext). This may be an empty string.
 | hostedUrl   | A URL which points to Lever's hosted job posting page. Examples: [global][leverdemo-job-site-posting-global] / [EU][leverdemo-job-site-posting-eu]
 | applyUrl    | A URL which points to Lever's hosted application form to apply to the job posting. Examples: [global][leverdemo-job-site-posting-application-global] / [EU][leverdemo-job-site-posting-application-eu]
-| workplaceType    | Describes the primary workplace environment for a job posting. May be one of `unspecified`, `on-site`, `remote`, or `hybrid`. Not filterable. <br /> Note: to be released in waved rollouts starting October, 2022.
+| workplaceType    | Describes the primary workplace environment for a job posting. May be one of `unspecified`, `on-site`, `remote`, or `hybrid`. Not filterable
 | salaryRange  | Object with `currency`, `interval`, `min`, and `max`.  This field is optional.  In XML mode this field is parsed into a string.<br /> Note: to be released in waved rollouts starting mid February, 2023.
 | salaryDescription | Optional description for the Salary range (as styled HTML).  <br /> Note: to be released in waved rollouts starting mid February, 2023.
 | salaryDescriptionPlain | Optional description for the Salary range (as plainText).  <br /> Note: to be released in waved rollouts starting mid February, 2023.
