@@ -218,6 +218,7 @@ required. The candidate will be emailed after they apply to the job, unless the 
 | `source`            | Adds a source tag to candidate (e.g. 'LinkedIn')
 | `ip`                | IP application was submitted from, used for detecting country for compliance reasons (e.g. `"184.23.195.146"`)
 | `consent`           | Indicate whether candidate is open to being contacted about future opportunities (e.g. `"consent":{"marketing":true}` for `JSON` or `consent[marketing]=true` for `multipart/form-data`)
+| `opportunityLocation` | `account_job_locations` items are already fetched and loaded onto `_page.accountLocationItems`. Now, they are also used to properly validate whether a supplied opportunity location is valid, and convert the supplied value to an id.
 
 The server will respond with JSON object.
 
