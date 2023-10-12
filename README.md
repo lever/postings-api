@@ -218,7 +218,7 @@ required. The candidate will be emailed after they apply to the job, unless the 
 | `source`            | Adds a source tag to candidate (e.g. 'LinkedIn')
 | `ip`                | IP application was submitted from, used for detecting country for compliance reasons (e.g. `"184.23.195.146"`)
 | `consent`           | Indicate whether candidate is open to being contacted about future opportunities (e.g. `"consent":{"marketing":true}` for `JSON` or `consent[marketing]=true` for `multipart/form-data`)
-| `opportunityLocation` | The posting location associated with the opportunity. If no posting is provided, opportunityLocation is not set. If not specified and a multi-location posting is provided, opportunityLocation defaults to “unspecified”. Defaults to the posting location for single-location postings.
+| `opportunityLocation` | The posting location associated with the opportunity. If no posting is provided, opportunityLocation is not set. If not specified and a multi-location posting is provided, opportunityLocation defaults to “unspecified”. Defaults to the posting location for single-location postings. <br /> Note: to be released in waved rollouts starting late October, 2023.
 
 The server will respond with JSON object.
 
