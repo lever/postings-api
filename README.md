@@ -160,8 +160,8 @@ In JSON mode, each job posting is a JSON object with the following fields:
 | ----------- | ----------------------------- |
 | id          | Unique job posting ID
 | text        | Job posting name
-| categories  | Object with location, commitment, team, and department
-| country     | An ISO 3166-1 alpha-2 code for a country / territory (or null to indicate an unknown country). This is not filterable. Note: It will be released as part of the offcycle release, progressive waved rollout starting in September, 2022
+| categories  | Object with location, commitment, team, department, and allLocations.<br />Note: primary posting location is represented by location, and also appears in the allLocations array.
+| country     | An ISO 3166-1 alpha-2 code for a country / territory (or null to indicate an unknown country). This is not filterable.
 | description | Job description (as styled HTML).
 | descriptionPlain | Job description (as plaintext).
 | lists       | Extra lists (such as requirements, benefits, etc.) from the job posting. This is a list of `{text:NAME, content:"unstyled HTML of list elements"}`
@@ -170,9 +170,9 @@ In JSON mode, each job posting is a JSON object with the following fields:
 | hostedUrl   | A URL which points to Lever's hosted job posting page. Examples: [global][leverdemo-job-site-posting-global] / [EU][leverdemo-job-site-posting-eu]
 | applyUrl    | A URL which points to Lever's hosted application form to apply to the job posting. Examples: [global][leverdemo-job-site-posting-application-global] / [EU][leverdemo-job-site-posting-application-eu]
 | workplaceType    | Describes the primary workplace environment for a job posting. May be one of `unspecified`, `on-site`, `remote`, or `hybrid`. Not filterable
-| salaryRange  | Object with `currency`, `interval`, `min`, and `max`.  This field is optional.  In XML mode this field is parsed into a string.<br /> Note: to be released in waved rollouts starting mid February, 2023.
-| salaryDescription | Optional description for the Salary range (as styled HTML).  <br /> Note: to be released in waved rollouts starting mid February, 2023.
-| salaryDescriptionPlain | Optional description for the Salary range (as plainText).  <br /> Note: to be released in waved rollouts starting mid February, 2023.
+| salaryRange  | Object with `currency`, `interval`, `min`, and `max`.  This field is optional.  In XML mode this field is parsed into a string.
+| salaryDescription | Optional description for the Salary range (as styled HTML).
+| salaryDescriptionPlain | Optional description for the Salary range (as plainText).
 
 ## Get a specific job posting
 
