@@ -162,8 +162,12 @@ In JSON mode, each job posting is a JSON object with the following fields:
 | text        | Job posting name
 | categories  | Object with location, commitment, team, department, and allLocations.<br />Note: primary posting location is represented by location, and also appears in the allLocations array.
 | country     | An ISO 3166-1 alpha-2 code for a country / territory (or null to indicate an unknown country). This is not filterable.
-| description | Job description (as styled HTML).
-| descriptionPlain | Job description (as plaintext).
+| opening | Job description opening (as styled HTML).
+| openingPlain | Job description opening (as plaintext).
+| description | Combined job description opening and body (as styled HTML).
+| descriptionPlain | Combined job description opening and body (as plaintext).
+| descriptionBody | Job description body without opening (as styled HTML).
+| descriptionBodyPlain | Job description body without opening (as plaintext).
 | lists       | Extra lists (such as requirements, benefits, etc.) from the job posting. This is a list of `{text:NAME, content:"unstyled HTML of list elements"}`
 | additional  | Optional closing content for the job posting (as styled HTML). This may be an empty string.
 | additionalPlain  | Optional closing content for the job posting (as plaintext). This may be an empty string.
