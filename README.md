@@ -161,7 +161,7 @@ In JSON mode, each job posting is a JSON object with the following fields:
 | id          | Unique job posting ID
 | text        | Job posting name
 | categories  | Object with location, commitment, team, and department
-| country     | An ISO 3166-1 alpha-2 code for a country / territory (or null to indicate an unknown country). This is not filterable. Note: It will be released as part of the offcycle release, progressive waved rollout starting in September, 2022
+| country     | An ISO 3166-1 alpha-2 code for a country / territory (or null to indicate an unknown country). This is not filterable.
 | description | Job description (as styled HTML).
 | descriptionPlain | Job description (as plaintext).
 | lists       | Extra lists (such as requirements, benefits, etc.) from the job posting. This is a list of `{text:NAME, content:"unstyled HTML of list elements"}`
