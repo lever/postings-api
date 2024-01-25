@@ -160,19 +160,23 @@ In JSON mode, each job posting is a JSON object with the following fields:
 | ----------- | ----------------------------- |
 | id          | Unique job posting ID
 | text        | Job posting name
-| categories  | Object with location, commitment, team, and department
+| categories  | Object with location, commitment, team, department, and allLocations.<br />Note: primary posting location is represented by location, and also appears in the allLocations array.
 | country     | An ISO 3166-1 alpha-2 code for a country / territory (or null to indicate an unknown country). This is not filterable.
-| description | Job description (as styled HTML).
-| descriptionPlain | Job description (as plaintext).
+| opening | Job description opening (as styled HTML).
+| openingPlain | Job description opening (as plaintext).
+| description | Combined job description opening and body (as styled HTML).
+| descriptionPlain | Combined job description opening and body (as plaintext).
+| descriptionBody | Job description body without opening (as styled HTML).
+| descriptionBodyPlain | Job description body without opening (as plaintext).
 | lists       | Extra lists (such as requirements, benefits, etc.) from the job posting. This is a list of `{text:NAME, content:"unstyled HTML of list elements"}`
 | additional  | Optional closing content for the job posting (as styled HTML). This may be an empty string.
 | additionalPlain  | Optional closing content for the job posting (as plaintext). This may be an empty string.
 | hostedUrl   | A URL which points to Lever's hosted job posting page. Examples: [global][leverdemo-job-site-posting-global] / [EU][leverdemo-job-site-posting-eu]
 | applyUrl    | A URL which points to Lever's hosted application form to apply to the job posting. Examples: [global][leverdemo-job-site-posting-application-global] / [EU][leverdemo-job-site-posting-application-eu]
 | workplaceType    | Describes the primary workplace environment for a job posting. May be one of `unspecified`, `on-site`, `remote`, or `hybrid`. Not filterable
-| salaryRange  | Object with `currency`, `interval`, `min`, and `max`.  This field is optional.  In XML mode this field is parsed into a string.<br /> Note: to be released in waved rollouts starting mid February, 2023.
-| salaryDescription | Optional description for the Salary range (as styled HTML).  <br /> Note: to be released in waved rollouts starting mid February, 2023.
-| salaryDescriptionPlain | Optional description for the Salary range (as plainText).  <br /> Note: to be released in waved rollouts starting mid February, 2023.
+| salaryRange  | Object with `currency`, `interval`, `min`, and `max`.  This field is optional.  In XML mode this field is parsed into a string.
+| salaryDescription | Optional description for the Salary range (as styled HTML).
+| salaryDescriptionPlain | Optional description for the Salary range (as plainText).
 
 ## Get a specific job posting
 
@@ -221,6 +225,7 @@ required. The candidate will be emailed after they apply to the job, unless the 
 | `source`            | Adds a source tag to candidate (e.g. 'LinkedIn')
 | `ip`                | IP application was submitted from, used for detecting country for compliance reasons (e.g. `"184.23.195.146"`)
 | `consent`           | Indicate whether candidate is open to being contacted about future opportunities (e.g. `"consent":{"marketing":true}` for `JSON` or `consent[marketing]=true` for `multipart/form-data`)
+| `opportunityLocation` | The posting location associated with the opportunity. If no posting is provided, opportunityLocation is not set. If not specified and a multi-location posting is provided, opportunityLocation defaults to “unspecified”. Defaults to the posting location for single-location postings. <br /> Note: to be released in waved rollouts starting late October, 2023.
 
 The server will respond with JSON object.
 
