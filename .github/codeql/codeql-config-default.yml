@@ -1,0 +1,10 @@
+# Configuration file for CodeQL.
+# You can tune the CodeQL analysis (excluding paths from being scanned for instance)
+#
+# See https://codeql.github.com/docs/codeql-cli/specifying-command-options-in-a-codeql-configuration-file/
+
+paths-ignore:
+  - "**/*__tests__*/**"
+  - "*vendor"
+  - "**/vendor*/**"
+  - "docs/*"
