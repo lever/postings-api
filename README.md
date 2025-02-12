@@ -150,8 +150,8 @@ Fetch published job postings.
 | department            | Filter postings by department, if your company uses departments. You can specify multiple values and they are *OR*'ed together. Note: when specifying multiple values, this field is case sensitive! To specify multiple values, use the format `?department=Legal&department=Operations`. |
 | level           | Filter postings by level. |
 | group           | May be one of `location`, `commitment`, or `team`. Returns results grouped by category |
-| css             | In iframe mode, the URL of a CSS stylesheet |
-| resize          | In iframe mode, the URL of an HTML page with a script for resizing the iframe. (See usage below) |
+| css             | In iframe mode, the URL of a CSS stylesheet. Make sure the URL is saved in the allowed list at lever job site settings. |
+| resize          | In iframe mode, the URL of an HTML page with a script for resizing the iframe. Make sure the URL is saved in the allowed list at lever job site settings. (See usage below) |
 
 
 In JSON mode, each job posting is a JSON object with the following fields:
